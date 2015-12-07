@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ServidorApiBiblioteca.Models.Libro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Añadir libro", "Alta")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cod_libro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.editorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genero)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cod_libro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.editorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genero)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Actualizar", new { id = item.cod_libro}) |
+            @Html.ActionLink("Delete", "Borrar", new { id = item.cod_libro })
+        </td>
+    </tr>
+}
+
+</table>
