@@ -13,7 +13,6 @@ namespace ServidorApiBiblioteca.Models
         public string editorial { get; set; }
         public string autor { get; set; }
         public string genero { get; set; }
-        public decimal precio { get; set; }
 
     }
 }
